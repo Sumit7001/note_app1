@@ -8,6 +8,10 @@ function App() {
   const [notesList, setNotesList] = useState([]);
 
   function addNote(newNote) {
+    if (newNote.title === "" && newNote.content === "") {
+      alert("Can't add an empty note!");
+      return;
+    }
     setNotesList((prev) => {
       return [...prev, newNote];
     });
